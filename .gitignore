@@ -2,15 +2,18 @@
 __pycache__/
 *.pyc
 
-# Virtual Environment
+# Virtual Env
 .venv/
 venv/
 
 # Outputs
 output/
 
+# Test Videos
+assets/
+
+# VSCode
+.vscode/
+
 # Model Weights
 weights/*.pth
-
-# VS Code
-.vscode/
