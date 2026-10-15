@@ -1,0 +1,60 @@
+video:
+  type: file
+  source: assets/test.avi
+  start_frame: 0
+  end_frame: 3000
+model:
+  config: rtdetr/rtdetr_pytorch/configs/rtdetr/rtdetr_r18vd_6x_coco.yml
+  weights: weights/rtdetr_r18vd_6x_coco.pth
+  confidence_threshold: 0.6
+classes:
+  car: true
+  bus: true
+  truck: true
+  motorcycle: false
+parking:
+  A:
+    name: Front
+    capacity: 10
+  B:
+    name: Left
+    capacity: 8
+  C:
+    name: Right
+    capacity: 12
+lines:
+  A:
+    p1:
+    - 300
+    - 250
+    p2:
+    - 600
+    - 250
+  B:
+    p1:
+    - 250
+    - 300
+    p2:
+    - 250
+    - 550
+  C:
+    p1:
+    - 700
+    - 300
+    p2:
+    - 700
+    - 550
+tracking:
+  tracker_type: ocsort
+  enable_business_lifecycle: false
+  track_threshold: 0.5
+  track_buffer: 30
+  match_threshold: 0.8
+  right_exit_margin: 80
+  bottom_exit_margin: 60
+  exit_confirm_frames: 15
+trajectory_history: 30
+counting:
+  cooldown_frames: 15
+  min_movement_pixels: 10
+  hysteresis_pixels: 10
